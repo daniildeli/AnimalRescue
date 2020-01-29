@@ -7,8 +7,7 @@ import { store } from "../../../../store";
 import { actionIsActivePopup } from "../../Home/store/actions";
 import "../styles/menu.scss"
 import { RULES_PAGE_LINK } from "../../Rules";
-import { HOW_TO_HELP_PAGE_LINK } from "../../HowToHelp";
-import { HOW_TO_HELP_QUERY_NAME, HelpTypes } from "../../HowToHelp/Component";
+import { HELP_PAGE_LINKS } from "../../HowToHelp";
 
 export const AppMenu: React.FC = () => {
     return (
@@ -30,13 +29,14 @@ export const AppMenu: React.FC = () => {
                     <li><a href="pet-the-loss"><TI18n keyStr="headerMenuItem2Dropdown4" default="Потеряшку"/></a></li>
                 </ul>
             </div>
-            <Link className="item" to={HOW_TO_HELP_PAGE_LINK}><TI18n keyStr="headerMenuItem3" default="Как я могу помочь?" />
+            <div className='item'>
+              <Link to={HELP_PAGE_LINKS.default}><TI18n keyStr="headerMenuItem3" default="Как я могу помочь?" /></Link>
               <ul className="dropdown">
-                <li><Link to={`${HOW_TO_HELP_PAGE_LINK}?${HOW_TO_HELP_QUERY_NAME}=${HelpTypes.FINANCE}`}><TI18n keyStr="headerMenuItem3Dropdown1" default="Финансово" /></Link></li>
-                <li><Link to={`${HOW_TO_HELP_PAGE_LINK}?${HOW_TO_HELP_QUERY_NAME}=${HelpTypes.STUFF}`}><TI18n keyStr="headerMenuItem3Dropdown2" default="Вещами" /></Link></li>
-                <li><Link to={`${HOW_TO_HELP_PAGE_LINK}?${HOW_TO_HELP_QUERY_NAME}=${HelpTypes.VOLUNTEERING}`}><TI18n keyStr="headerMenuItem3Dropdown3" default="Волонтерством" /></Link></li>
+                <li><Link to={HELP_PAGE_LINKS.finance}><TI18n keyStr="headerMenuItem3Dropdown1" default="Финансово" /></Link></li>
+                <li><Link to={HELP_PAGE_LINKS.stuff}><TI18n keyStr="headerMenuItem3Dropdown2" default="Вещами" /></Link></li>
+                <li><Link to={HELP_PAGE_LINKS.volunteering}><TI18n keyStr="headerMenuItem3Dropdown3" default="Волонтерством" /></Link></li>
               </ul>
-            </Link>
+            </div>
             <div className="item"><TI18n keyStr="blog" default="Блог"/></div>
             <Link className="item" to="/contacts"><TI18n keyStr="contacts" default="Контакты"/></Link>
             <div className="item heart"><HeartLogo/></div>

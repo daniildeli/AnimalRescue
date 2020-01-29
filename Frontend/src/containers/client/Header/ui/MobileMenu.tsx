@@ -5,8 +5,7 @@ import "../styles/mobileMenu.scss"
 import {ReactComponent as HeartLogo} from '../../../../assets/header/heart.svg';
 import { SocialLinks } from "../../../../components/SocialLinks";
 import { Link } from "react-router-dom";
-import { HOW_TO_HELP_PAGE_LINK } from "../../HowToHelp";
-import { HOW_TO_HELP_QUERY_NAME, HelpTypes } from "../../HowToHelp/Component";
+import { HELP_PAGE_LINKS } from "../../HowToHelp";
 
 export const MobileMenu: React.FC = () => {
     let initialState = {
@@ -71,9 +70,9 @@ export const MobileMenu: React.FC = () => {
             <div className="drop-icon" >
                          <span><TI18n keyStr="headerMenuItem3" default="Как я могу помочь?"/></span>
                         <ul className="dropdown" onClick={(e)=> stopFloatinUp(e)}>
-                            <li><Link to={`${HOW_TO_HELP_PAGE_LINK}?${HOW_TO_HELP_QUERY_NAME}=${HelpTypes.FINANCE}`}><TI18n keyStr="headerMenuItem3Dropdown1" default="Финансово" /></Link></li>
-                            <li><Link to={`${HOW_TO_HELP_PAGE_LINK}?${HOW_TO_HELP_QUERY_NAME}=${HelpTypes.STUFF}`}><TI18n keyStr="headerMenuItem3Dropdown2" default="Вещами" /></Link></li>
-                            <li><Link to={`${HOW_TO_HELP_PAGE_LINK}?${HOW_TO_HELP_QUERY_NAME}=${HelpTypes.VOLUNTEERING}`}><TI18n keyStr="headerMenuItem3Dropdown3" default="Волонтерством" /></Link></li>
+                            <li><Link to={HELP_PAGE_LINKS.finance}><TI18n keyStr="headerMenuItem3Dropdown1" default="Финансово" /></Link></li>
+                            <li><Link to={HELP_PAGE_LINKS.stuff}><TI18n keyStr="headerMenuItem3Dropdown2" default="Вещами" /></Link></li>
+                            <li><Link to={HELP_PAGE_LINKS.volunteering}><TI18n keyStr="headerMenuItem3Dropdown3" default="Волонтерством" /></Link></li>
                         </ul>
                     </div>
                 </div>
